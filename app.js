@@ -96,7 +96,10 @@ let model = {
 };
 
 let view = {
-  displayMessage: function (message) {},
+  displayMessage: function (message) {
+    let messageArea = document.getElementById("messageArea");
+    messageArea.innerHTML = message;
+  },
   displayHit: function (guess) {},
   displayMiss: function (guess) {},
 };
