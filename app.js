@@ -109,3 +109,5 @@ let view = {
     cell.setAttribute("class", "miss");
   },
 };
+
+let controll = {};
