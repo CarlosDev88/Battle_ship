@@ -154,3 +154,34 @@ function parseGuess(guess) {
   }
   return null;
 }
+
+function handleFireButton() {
+  let guessInput = document.getElementById("guessInput");
+  let guess = guessInput.value.toUpperCase();
+
+  controll.processGuess(guess);
+  guessInput.value = "";
+}
+
+function handleKeyPress(e) {
+  let fireButton = document.getElementById("fireButton");
+
+  e = e || window.event;
+
+  if (e.keyCode === 13) {
+    fireButton.click();
+    return false;
+  }
+}
+
+function init() {
+  let fireButton = document.getElementById("fireButton");
+  fireButton.onclick = handleFireButton;
+
+  let guessInput = document.getElementById("guessInput");
+  guessInput.onkeypress = handleKeyPress;
+
+  model.generateShipLocations();
+}
+
+window.onload = init;
