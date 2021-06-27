@@ -9,50 +9,83 @@
     <title>Batall ship</title>
   </head>
   <body>
-    <div class="container">
-      <div class="grid grid-user"></div>
-      <div class="grid grid-computer"></div>
+    <div id="board">
+      <div id="messageArea"></div>
+
+      <table>
+        <tr>
+          <td id="00"></td>
+          <td id="01"></td>
+          <td id="02"></td>
+          <td id="03"></td>
+          <td id="04"></td>
+          <td id="05"></td>
+          <td id="06"></td>
+        </tr>
+        <tr>
+          <td id="10"></td>
+          <td id="11"></td>
+          <td id="12"></td>
+          <td id="13"></td>
+          <td id="14"></td>
+          <td id="15"></td>
+          <td id="16"></td>
+        </tr>
+        <tr>
+          <td id="20"></td>
+          <td id="21"></td>
+          <td id="22"></td>
+          <td id="23"></td>
+          <td id="24"></td>
+          <td id="25"></td>
+          <td id="26"></td>
+        </tr>
+        <tr>
+          <td id="30"></td>
+          <td id="31"></td>
+          <td id="32"></td>
+          <td id="33"></td>
+          <td id="34"></td>
+          <td id="35"></td>
+          <td id="36"></td>
+        </tr>
+
+        <tr>
+          <td id="40"></td>
+          <td id="41"></td>
+          <td id="42"></td>
+          <td id="43"></td>
+          <td id="44"></td>
+          <td id="45"></td>
+          <td id="46"></td>
+        </tr>
+
+        <tr>
+          <td id="50"></td>
+          <td id="51"></td>
+          <td id="52"></td>
+          <td id="53"></td>
+          <td id="54"></td>
+          <td id="55"></td>
+          <td id="56"></td>
+        </tr>
+
+        <tr>
+          <td id="60"></td>
+          <td id="61"></td>
+          <td id="62"></td>
+          <td id="63"></td>
+          <td id="64"></td>
+          <td id="65"></td>
+          <td id="66"></td>
+        </tr>
+      </table>
+
+      <form>
+        <input type="text" id="guessInput" placeholder="A0" />
+        <input type="button" id="fireButton" value="Fire!" />
+      </form>
     </div>
-
-    <div class="hidden-info">
-      <button id="start">Start Game</button>
-      <button id="rotate">Rotate Your Ship</button>
-      <h3 id="whose-go">Your Go</h3>
-      <h3 id="info"></h3>
-    </div>
-
-    <div class="grid-display">
-      <div class="ship destroyer-container" draggable="true">
-        <div id="destroyer-0"></div>
-        <div id="destroyer-1"></div>
-      </div>
-
-      <div class="ship submarine-container" draggable="true">
-        <div id="submarine-0"></div>
-        <div id="submarine-1"></div>
-        <div id="submarine-2"></div>
-      </div>
-
-      <div class="ship cruiser-container" draggable="true">
-        <div id="cruiser-0"></div>
-        <div id="cruiser-1"></div>
-        <div id="cruiser-2"></div>
-      </div>
-
-      <div class="ship battleship-container" draggable="true">
-        <div id="battleship-0"></div>
-        <div id="battleship-1"></div>
-        <div id="battleship-2"></div>
-        <div id="battleship-3"></div>
-      </div>
-
-      <div class="ship carrier-container" draggable="true">
-        <div id="carrier-0"></div>
-        <div id="carrier-1"></div>
-        <div id="carrier-2"></div>
-        <div id="carrier-3"></div>
-        <div id="carrier-4"></div>
-      </div>
-    </div>
+    <script src="app.js"></script>
   </body>
 </html>
