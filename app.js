@@ -110,4 +110,47 @@ let view = {
   },
 };
 
-let controll = {};
+let controll = {
+  guesses: 0,
+
+  processGuess: function (guess) {
+    let location = parseGuess(guess);
+
+    if (location) {
+      this.guesses++;
+      let hit = model.fire(location);
+
+      if (hit && model.shipsSunk === model.numShip) {
+        view.displayMessage(
+          "You sunk all the battle ship in " + this.guesses + " guesses!"
+        );
+      }
+    }
+  },
+};
+
+function parseGuess(guess) {
+  let alphabet = ["A", "B", "C", "D", "E", "F", "G"];
+
+  if (guess === null || guess.length !== 2) {
+    alert("please enter a valid guess. Must be a letter and number");
+  } else {
+    let firstChar = guess.charAt(0);
+    let row = alphabet.indexOf(firstChar);
+    let col = guess.charAt(1);
+
+    if (isNaN(row) || isNaN(col)) {
+      alert("Not a valid input");
+    } else if (
+      row < 0 ||
+      row >= model.boardSize ||
+      col < 0 ||
+      col >= model.boardSize
+    ) {
+      alert("Input is not located on the board");
+    } else {
+      return row + col;
+    }
+  }
+  return null;
+}
